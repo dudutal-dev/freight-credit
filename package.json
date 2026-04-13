@@ -1,0 +1,22 @@
+{
+  "name": "fridenson-credit-management",
+  "version": "2.1.0",
+  "private": true,
+  "description": "מערכת ניהול אשראי שילוח — פרידנזון שירותים לוגיסטיים",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "build:standalone": "node scripts/build-standalone.js",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
